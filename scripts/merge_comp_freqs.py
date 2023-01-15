@@ -33,9 +33,9 @@ def skip_heading(f):
 
 
 def read_heading_from(r):
-	p = r.next()
+	p = next(r)
 	while not p:
-		p = r.next()
+		p = next(r)
 	return p
 
 
