@@ -43,7 +43,7 @@ def validate_content_by(heading, expected):
 	comparison = expected.split(",")
 	stripped = heading[0:len(comparison)]  # allow extra fields
 	if stripped != comparison:
-		raise MergeError("Erroneous content. Expected = " + expected + ", got = " + ",".join(heading))
+		raise MergeError(f"Erroneous content. Expected = {expected}, got = {','.join(heading)}")
 
 
 def parse_csv(merged, filename, parse_action, expected_format):
@@ -59,7 +59,7 @@ def write_csv(stats):
 	print("module,revisions,code")
 	for s in stats:
 		name, (f, c) = s
-		print(name + "," + f + "," + c)
+		print(f"{name},{f},{c}")
 
 
 def as_os_aware_path(name):
