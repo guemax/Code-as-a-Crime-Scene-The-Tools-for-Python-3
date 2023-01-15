@@ -47,7 +47,7 @@ def validate_content_by(heading, expected):
 
 
 def parse_csv(merged, filename, parse_action, expected_format):
-	with open(filename, "rb") as csvfile:
+	with open(filename, "r") as csvfile:
 		r = csv.reader(csvfile, delimiter=",")
 		heading = read_heading_from(r)
 		validate_content_by(heading, expected_format)
